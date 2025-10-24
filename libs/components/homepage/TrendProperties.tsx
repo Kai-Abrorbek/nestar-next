@@ -37,7 +37,7 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 	});
 	/** HANDLERS **/
 
-	if (trendProperties) console.log('trendProperties: ====', trendProperties);
+	// if (trendProperties) console.log('trendProperties: ====', trendProperties);
 	if (!trendProperties) return null;
 
 	if (device === 'mobile') {

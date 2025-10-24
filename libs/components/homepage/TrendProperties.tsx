@@ -32,7 +32,6 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 		variables: { input: initialInput },
 		notifyOnNetworkStatusChange: true,
 		onCompleted: (data: T) => {
-			console.log(data?.getProperties?.list);
 			setTrendProperties(data?.getProperties?.list);
 		},
 	});

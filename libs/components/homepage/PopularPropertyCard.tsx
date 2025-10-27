@@ -20,11 +20,15 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 	const user = useReactiveVar(userVar);
 
 	/** HANDLERS **/
+	const pushDetailHandler = async (properytId: string) => {
+		await router.push({ pathname: 'property/detail', query: { id: properytId } });
+	};
 
 	if (device === 'mobile') {
 		return (
 			<Stack className="popular-card-box">
 				<Box
+					onClick={() => pushDetailHandler(property._id)}
 					component={'div'}
 					className={'card-img'}
 					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
@@ -41,7 +45,9 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 					<div className={'price'}>${property.propertyPrice}</div>
 				</Box>
 				<Box component={'div'} className={'info'}>
-					<strong className={'title'}>{property.propertyTitle}</strong>
+					<strong onClick={() => pushDetailHandler(property._id)} className={'title'}>
+						{property.propertyTitle}
+					</strong>
 					<p className={'desc'}>{property.propertyAddress}</p>
 					<div className={'options'}>
 						<div>
@@ -74,6 +80,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 		return (
 			<Stack className="popular-card-box">
 				<Box
+					onClick={() => pushDetailHandler(property._id)}
 					component={'div'}
 					className={'card-img'}
 					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
@@ -90,7 +97,9 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 					<div className={'price'}>${property.propertyPrice}</div>
 				</Box>
 				<Box component={'div'} className={'info'}>
-					<strong className={'title'}>{property.propertyTitle}</strong>
+					<strong onClick={() => pushDetailHandler(property._id)} className={'title'}>
+						{property.propertyTitle}
+					</strong>
 					<p className={'desc'}>{property.propertyAddress}</p>
 					<div className={'options'}>
 						<div>

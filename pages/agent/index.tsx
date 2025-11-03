@@ -54,7 +54,6 @@ const AgentList: NextPage = ({ initialInput, ...props }: any) => {
 		},
 	});
 
-	console.log(total);
 	/** LIFECYCLES **/
 	useEffect(() => {
 		if (router.query.input) {

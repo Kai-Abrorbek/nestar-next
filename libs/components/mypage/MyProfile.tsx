@@ -32,7 +32,6 @@ const MyProfile: NextPage = ({ initialValues, ...props }: any) => {
 	const uploadImage = async (e: any) => {
 		try {
 			const image = e.target.files[0];
-			console.log('+image:', image);
 
 			const formData = new FormData();
 			formData.append(
@@ -86,8 +85,6 @@ const MyProfile: NextPage = ({ initialValues, ...props }: any) => {
 			return true;
 		}
 	};
-
-	console.log('+updateData', updateData);
 
 	if (device === 'mobile') {
 		return <>MY PROFILE PAGE MOBILE</>;

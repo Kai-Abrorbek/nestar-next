@@ -23,6 +23,7 @@ const AgentCard = (props: AgentCardProps) => {
 		? `${REACT_APP_API_URL}/${agent?.memberImage}`
 		: '/img/profile/defaultUser.svg';
 
+	console.log(agent);
 	if (device === 'mobile') {
 		return <div>AGENT CARD</div>;
 	} else {
